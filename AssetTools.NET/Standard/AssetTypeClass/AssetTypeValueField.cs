@@ -281,6 +281,10 @@ namespace AssetsTools.NET
                             for (int i = 0; i < childCount; i++)
                             {
                                 AssetTypeReferencedObject refdObject = AsManagedReferencesRegistry.references[i];
+                                if (AsManagedReferencesRegistry.version > 1)
+                                {
+                                    writer.Write(childCount);
+                                }
                                 if (AsManagedReferencesRegistry.version != 1)
                                 {
                                     writer.Write(refdObject.rid);
